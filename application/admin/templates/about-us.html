@@ -1,0 +1,104 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add about us</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        About Us
+                    </header>
+                    <div class="panel-body">
+                        <form action="about-us.php" method="post" name="about_us_form" class="form-horizontal tasi-form" id="about_us_form">
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-5 controls">
+                                    #msg#
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Content:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="about_us_content" rows="6" id="about_us_content"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="about_us">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Added By</th>
+                                <th>About Us Content</th>
+                                <th>Status</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #about_us#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<link href = "css/sweetalert.css" rel="stylesheet" />
+<script src = "js/sweetalert.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    function change_status(about_us_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'change_status.php?about_us_id=' + about_us_id
+        }).done(function (resp) {
+            if (resp) {
+                alert('Status modified.');
+                top.location.reload();
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#about_us').dataTable({
+            "aaSorting": [[0, "desc"]]
+        });
+    });
+</script>
+
+#footer#

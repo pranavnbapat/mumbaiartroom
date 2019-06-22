@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mumbai Art Room</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="Keywords" content="" />
+        <meta name="Description" content="" />
+
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link href="css/style.css" rel="stylesheet" />
+
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+
+        <style>
+            .mainArea .projects .homeArea2 p, nav ul li a:hover, nav ul li a.act, .mrtlogo, .mainArea .homeArea2 p, #accordian h1, .homeArea2 a:hover, #accordian li a:hover, .projItem h3 a:hover, input[type="submit"], .pdfText h5 a:hover, .textRed, .textBlue {
+                color:#FD3A5A !important;
+            }
+            #html5-text {
+                text-align:center !important;
+                font-family: universltstd !important;
+            }
+            .google-maps {
+                position: relative;
+                padding-bottom: 75%; // This is the aspect ratio
+                height: 0;
+                overflow: hidden;
+            }
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="google-maps">
+            <div class="wrapper">
+                <header>
+                    <a href="index.php">
+                        <span class="mrtlogo">MUMBAI ART ROOM</span>
+                    </a>
+                    <div class="mobileMenu"><div class="down" id="updwn"></div></div>
+                    <div class="clear"></div>
+                    <div class="menuArea">
+                        <nav class="menu">
+                            <ul>
+                                <li><a href="http://www.mumbaiartroom.org/programme.php">PROGRAMME</a></li>
+                                <li><a href="http://www.mumbaiartroom.org/projects.php">PROJECTS</a></li>
+                                <li><a href="http://www.mumbaiartroom.org/publications.php">PUBLICATIONS</a></li>
+                                <li>&nbsp;</li><li><a href="http://www.mumbaiartroom.org/about.php">ABOUT</a></li>
+                                <li><a href="http://www.mumbaiartroom.org/location.html">LOCATION</a></li>
+                                <li>&nbsp;</li><li><a href="http://www.mumbaiartroom.org/subscribe.php">SUBSCRIBE</a></li>
+                                <li class="last marBtm15">Pipewala Building <br />Fourth Pasta Lane, Colaba <br /> Mumbai 400 005, India <br />
+                                    <a href="mailto:office@mumbaiartroom.org" target="_blank">office@mumbaiartroom.org</a>
+                                </li>
+                                <li class="textRed">Tuesday – Saturday 11am – 7pm</li>
+                            </ul>
+                        </nav>            
+                    </div>
+                </header>
+            </div>
+            <iframe width="600" height="450" frameborder="0" style="border:0; margin-top: -150px;" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJN8zOb5XR5zsRbSab5HtKL6k&key=AIzaSyDAciW_Rro3wmEukoUuza_gebPMNXKqmbo&zoom=15" allowfullscreen></iframe>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#updwn").click(
+                        function ()
+                        {
+                            $(".menu").slideToggle(300);
+                            $("#updwn").toggleClass("up");
+                        });
+            });
+
+            window.addEventListener("orientationchange", hideAddressBar);
+            window.addEventListener("load", hideAddressBar);
+            function hideAddressBar()
+            {
+                setTimeout(function ()
+                {
+                    window.scrollTo(0, 1);
+                }, 0);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+#header#
+<div class="mainArea">
+    <div id="accordian">
+        #programmes_accordion#
+    </div>
+</div>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery_cookie.js"></script>
+<script type="text/javascript">
+    /* Accordion JS */
+    $(function () {
+        var cookieName = 'stickyAccordion';
+        $("#accordian").accordion({
+            heightStyle: "content",
+            clearStyle: true,
+            collapsible: true,
+            header: 'h1',
+            active: (parseInt($.cookie(cookieName)) || 0),
+            activate: function (event, ui) {
+                $.cookie(cookieName, parseInt($(this).accordion('option', 'active')));
+            }
+        });
+    });
+    /* Accordion JS */
+</script>
+#footer#

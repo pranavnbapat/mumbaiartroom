@@ -1,0 +1,255 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add publications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Publications
+                    </header>
+                    <div class="panel-body">
+                        <form action="publication.php" method="post" name="publication_form" class="form-horizontal tasi-form" id="publication_form" enctype="multipart/form-data">
+                            #msg#
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Image:</div>
+                                <div class="col-sm-7">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+                                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                <input type="file" class="default" name="publication_image" id="publication_image" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="title" id="title" value="#title#" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Publication Content:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="publication_content" id="publication_content">#publication_content#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="publications">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Publication Content</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #publications#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table" id="list">
+                    <div id="response"></div>
+                    <ul>
+                        #publication_sorting#
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+
+<style type="text/css">
+    label.error {
+        color: #b94a48;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    ul {
+        padding:0px;
+        margin: 0px;
+    }
+    #response {
+        padding:10px;
+        background-color:#9F9;
+        border:1px solid #ddd;
+        margin-bottom:20px;
+    }
+    #list li {
+        margin: 0 0 3px;
+        padding:8px;
+        color:#797979;
+        list-style: none;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    function change_status(publication_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'change_status.php?publication_id=' + publication_id
+        }).done(function (resp) {
+            if (resp == 'success') {
+                swal({
+                    title: "Status changed!",
+                    text: "",
+                    type: "success",
+                    confirmButtonColor: "#78cd51",
+                    confirmButtonText: "OK!",
+                    closeOnConfirm: false
+                },
+                function () {
+                    top.location.href = 'publication.php';
+                });
+            }
+        });
+    }
+
+    function delete_record(publication_id) {
+        swal({
+            title: "Are you sure?",
+            text: "Deleting this record might affect your project at different levels and you will not be able to recover this record",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel it!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'delete_record.php?publication_id=' + publication_id,
+                }).success(function (resp) {
+                    if (resp == 'success') {
+                        swal({
+                            title: "Record has been deleted!",
+                            text: "",
+                            type: "success",
+                            confirmButtonColor: "#78cd51",
+                            confirmButtonText: "OK!",
+                            closeOnConfirm: false
+                        },
+                        function () {
+                            top.location.href = 'publication.php';
+                        });
+                    } else {
+                        swal("Error", "Something has gone wrong! Please contact your administrator.", "error");
+                    }
+                });
+            } else {
+                swal("Cancelled", "Record is safe :)", "info");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        function slideout() {
+            setTimeout(function () {
+                $("#response").slideUp("slow", function () {
+                });
+
+            }, 2000);
+        }
+
+        $("#response").hide();
+        $(function () {
+            $("#list ul").sortable({opacity: 0.8, cursor: 'move', update: function () {
+
+                    var order = $(this).sortable("serialize") + '&update=update&type=publication';
+                    $.post("update_programme_order.php", order, function (theResponse) {
+                        $("#response").html(theResponse);
+                        $("#response").slideDown('slow');
+                        slideout();
+                    });
+                }
+            });
+        });
+
+        $('#publications').dataTable({
+            "aaSorting": [[0, "desc"]]
+        });
+
+        $('#publication_image').change(function () {
+            var file_size = parseFloat(this.files[0].size / 1024 / 1024 + "MB").toFixed(2);
+            var val = $(this).val().toLowerCase();
+            var regex = new RegExp("(.*?)\.(jpg|jpeg|png|tiff)$");
+            if (!(regex.test(val))) {
+                $(this).val('');
+                sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+            }
+            else if (file_size > 3) {
+                $(this).val('');
+                sweetAlert('Error', 'File size cannot exceed more than 3 MB', 'error');
+            }
+        });
+
+        $("#publication_form").validate({
+            rules: {
+                title: {required: true, minlength: 2, maxlength: 100}
+            },
+            messages: {
+                title: {required: 'Please enter publication title'}
+            }
+        });
+    });
+</script>
+
+#footer#

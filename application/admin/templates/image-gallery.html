@@ -1,0 +1,136 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add Image Gallery</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Add Image Gallery
+                    </header>
+                    <div class="panel-body">
+                        <form action="image-gallery.php" method="post" name="gallery_form" class="form-horizontal tasi-form" id="gallery_form">
+                            #msg#
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Gallery name:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="gallery_name" name="gallery_name" value="#gallery_name#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="gallery_list">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Gallery Name</th>
+                                <th>Add Images</th>
+                                <th>Edit</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #gallery_list#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+<style type="text/css">
+    label.error {
+        color: #b94a48;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    ul {
+        padding:0px;
+        margin: 0px;
+    }
+    #response {
+        padding:10px;
+        background-color:#9F9;
+        border:1px solid #ddd;
+        margin-bottom:20px;
+    }
+    #list li {
+        margin: 0 0 3px;
+        padding:8px;
+        color:#797979;
+        list-style: none;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    function change_status(gallery_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'change_status.php?gallery_id=' + gallery_id
+        }).done(function (resp) {
+            if (resp == 'success') {
+                swal({
+                    title: "Status changed!",
+                    text: "",
+                    type: "success",
+                    confirmButtonColor: "#78cd51",
+                    confirmButtonText: "OK!",
+                    closeOnConfirm: false
+                },
+                function () {
+                    top.location.href = 'image-gallery.php';
+                });
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#gallery_list').dataTable({
+            "aaSorting": [[5, "desc"]]
+        });
+
+        $("#gallery_form").validate({
+            rules: {
+                gallery_name: {required: true, minlength: 2, maxlength: 100}
+            },
+            messages: {
+                gallery_name: {required: 'Please enter gallery title'}
+            }
+        });
+    });
+</script>
+#footer#

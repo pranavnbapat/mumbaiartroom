@@ -1,0 +1,292 @@
+#header#
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add programme</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Programme Year
+                    </header>
+                    <div class="panel-body">
+                        <form action="programme.php" method="post" name="programme_year_form" class="form-horizontal tasi-form" id="programme_year_form">
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Year:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_year" name="programme_year" value="" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add Year" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Programme
+                    </header>
+                    <div class="panel-body">
+                        <form action="programme.php" method="post" name="programme_form" class="form-horizontal tasi-form" id="programme_form">
+                            #msg#
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Year:</div>
+                                <div class="col-sm-7">
+                                    <select id="programme_year" name="programme_year" class="form-control">
+                                        #programme_year#
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_title" name="programme_title" value="#programme_title#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Sub-Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_subtitle" name="programme_subtitle" value="#programme_subtitle#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Date:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_date" name="programme_date" value="#programme_date#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Link:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="link" name="link">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="programme_list">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Year</th>
+                                <th>Title</th>
+                                <th>Subtitle</th>
+                                <th>Date</th>
+                                <th>Order</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #programme_list#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table" id="list">
+                    <div id="response"></div>
+                    <ul>
+                        #sort#
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+<style type="text/css">
+    label.error {
+        color: #b94a48;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    ul {
+        padding:0px;
+        margin: 0px;
+    }
+    #response {
+        padding:10px;
+        background-color:#9F9;
+        border:1px solid #ddd;
+        margin-bottom:20px;
+    }
+    #list li {
+        margin: 0 0 3px;
+        padding:8px;
+        color:#797979;
+        list-style: none;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    function change_status(programme_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'change_status.php?programme_id=' + programme_id
+        }).done(function (resp) {
+            if (resp == 'success') {
+                swal({
+                    title: "Status changed!",
+                    text: "",
+                    type: "success",
+                    confirmButtonColor: "#78cd51",
+                    confirmButtonText: "OK!",
+                    closeOnConfirm: false
+                },
+                function () {
+                    top.location.href = 'programme.php';
+                });
+            }
+        });
+    }
+
+    function delete_record(programme_id) {
+        swal({
+            title: "Are you sure?",
+            text: "Deleting this record might affect your project at different levels and you will not be able to recover this record",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel it!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'delete_record.php?programme_id=' + programme_id,
+                }).success(function (resp) {
+                    if (resp == 'success') {
+                        swal({
+                            title: "Record has been deleted!",
+                            text: "",
+                            type: "success",
+                            confirmButtonColor: "#78cd51",
+                            confirmButtonText: "OK!",
+                            closeOnConfirm: false
+                        },
+                        function () {
+                            top.location.href = 'programme.php';
+                        });
+                    } else {
+                        swal("Error", "Something has gone wrong! Please contact your administrator.", "error");
+                    }
+                });
+            } else {
+                swal("Cancelled", "Record is safe :)", "info");
+            }
+        });
+    }
+
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'get-project-publication-content.php'
+        }).success(function(resp){
+            $("#link").append(resp);
+        });
+
+        function slideout() {
+            setTimeout(function () {
+                $("#response").slideUp("slow", function () {
+                });
+
+            }, 2000);
+        }
+
+        $("#response").hide();
+        $(function () {
+            $("#list ul").sortable({opacity: 0.8, cursor: 'move', update: function () {
+
+                    var order = $(this).sortable("serialize") + '&update=update&type=programme';
+                    $.post("update_programme_order.php", order, function (theResponse) {
+                        $("#response").html(theResponse);
+                        $("#response").slideDown('slow');
+                        slideout();
+                    });
+                }
+            });
+        });
+
+        $('#programme_list').dataTable({
+            "aaSorting": [[1, "desc"]]
+        });
+
+        $("#programme_form").validate({
+            rules: {
+                programme_title: {required: true, minlength: 2, maxlength: 200},
+                programme_subtitle: {required: true, minlength: 2, maxlength: 100},
+                programme_order: {required: true, minlength: 1, maxlength: 3, digits: true},
+//                programme_date: {required: true, maxlength: 20},
+                programme_year: {select_year: true}
+            },
+            messages: {
+                programme_title: {required: 'Please enter programme title'},
+                programme_subtitle: {required: 'Please enter programme subtitle'},
+                programme_order: {required: 'Please enter programme order'},
+//                programme_date: {required: 'Please enter programme date'}
+            }
+        });
+        jQuery.validator.addMethod('select_year', function (value) {
+            return (value != '0');
+        }, "Please select programme year");
+
+        $("#programme_year_form").validate({
+            rules: {
+                programme_year: {required: true, digits: true, minlength: 4, maxlength: 4}
+            },
+            messages: {
+                programme_year: {required: 'Please enter programme year'}
+            }
+        });
+    });
+</script>
+#footer#

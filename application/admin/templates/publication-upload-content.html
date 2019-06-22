@@ -1,0 +1,105 @@
+#header#
+<script src="js/bigUpload.js"></script>
+<script>
+    bigUpload = new bigUpload();
+    function upload() {
+        bigUpload.fire();
+    }
+    function abort() {
+        bigUpload.abortFileUpload();
+    }
+
+    $(document).ready(function (e) {
+        $("#bigUploadForm").validate({
+            rules: {
+                bigUploadFile: {required: true}
+            },
+        });
+
+        $('#bigUploadFile').change(function () {
+            var file = this.files;
+            var file_name = file[0]['name'];
+            if (/^[0-9A-Za-z -,._]+$/.test(file_name)) {
+
+            } else {
+                sweetAlert('Error', 'Your file name contains illegal characters. Please sanitize the file name.', 'error');
+                $(this).val('');
+            }
+
+            var file_size = parseFloat(this.files[0].size / 1024 / 1024 + "MB").toFixed(2);
+            var val = $(this).val().toLowerCase();
+            var regex = new RegExp("(.*?)\.(jpg|jpeg|png|tiff|tif|doc|docx|ppt|pptx|xls|xlsx|pdf|txt|psd|ai|avi|mp4|mpeg|mov|mkv|zip|7z|gzip|rar|tar|wmb)$");
+
+            if (!(regex.test(val))) {
+                $(this).val('');
+                sweetAlert('Error', 'Unsupported file', 'error');
+            } else if (file_size > 1000) {
+                $(this).val('');
+                sweetAlert('Error', 'File size cannot exceed more than 1 GB', 'error');
+            }
+        });
+    });
+</script>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add publication downloadable content</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Publications
+                    </header>
+                    <div class="panel-body">
+                        <form action="config/bigUpload.php?action=post-unsupported" method="post" enctype="multipart/form-data" id="bigUploadForm" class="form-horizontal tasi-form">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Upload:</label>
+                                <div class="controls col-md-9">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <span class="btn btn-white btn-file">
+                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select file</span>
+                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                            <input type="file" class="default" name="bigUploadFile" id="bigUploadFile" />
+                                        </span>
+                                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                                        <div id="bigUploadProgressBarContainer" style="margin-top: 10px;">
+                                            <div id="bigUploadProgressBarFilled">
+                                            </div>
+                                        </div>
+                                        <div id="bigUploadTimeRemaining"></div>
+                                        <div id="bigUploadResponse"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="button" class="bigUploadButton btn btn-info" value="Start Upload" id="bigUploadSubmit" onclick="upload()" />
+                                    <!--<input type="button" class="bigUploadButton bigUploadAbort btn btn-info" value="Cancel" onclick="abort()" />-->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+
+#footer#

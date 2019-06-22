@@ -1,0 +1,146 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add contact us</li>
+                </ul>
+            </div>
+        </div>
+
+<!--        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Contact Us
+                    </header>
+                    <div class="panel-body">
+                        <form action="menu.php" method="post" name="menu_form" class="form-horizontal tasi-form" id="menu_form">
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-5 controls">
+                                    #msg#
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Menu name:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="menu_name" id="menu_name" value="#menu_name#" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Menu order:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="menu_order" id="menu_order" value="#menu_order#" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Status:</div>
+                                <div class="col-sm-7">
+                                    <select id="menu_status" name="menu_status" class="form-group">
+                                        <option value="0">Please select an option</option>
+                                        <option value="published">Published</option>
+                                        <option value="disabled">Disabled</option>
+                                        <option value="archieved">Archieved</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Add" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>-->
+
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="menu">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Added By</th>
+                                <th>Menu Name</th>
+                                <th>Menu Order</th>
+                                <th>Status</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #menu_list#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+<link href = "css/sweetalert.css" rel="stylesheet" />
+<script src = "js/sweetalert.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+<style type="text/css">
+    label.error {
+        color: #b94a48;
+        font-weight: normal;
+        font-size: 12px;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    function change_status(menu_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'change_status.php?menu_id=' + menu_id
+        }).done(function (resp) {
+            if (resp == 'success') {
+                sweetAlert('Success', 'Status modified!', 'success');
+                top.location.reload();
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#menu').dataTable({
+            "aaSorting": [[0, "desc"]]
+        });
+
+        $("#menu_form").validate({
+            rules: {
+                contact_us_text: {required: true, minlength: 2, maxlength: 255},
+                contact_name: {required: true, minlength: 2, maxlength: 255},
+                contact_email: {required: true, email: true, maxlength: 255},
+                contact_phone: {required: true, minlength: 10, maxlength: 255}
+            },
+            messages: {
+                contact_us_text: {required: "Please enter contact us text"},
+                contact_name: {required: "Please enter contact name"},
+                contact_email: {required: "Please enter contact email", email: "Please enter a valid email address"},
+                contact_phone: {required: "Please enter contact phone"}
+            }
+        });
+    });
+</script>
+
+#footer#

@@ -1,0 +1,104 @@
+#header#
+<script src="js/bootstrap-select.js"></script>
+<link rel="stylesheet" href="css/bootstrap-select.css" />
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Messaging</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Send message
+                    </header>
+                    <div class="panel-body">
+                        <form action="compose-message.php" method="post" name="messaging_form" class="form-horizontal tasi-form" id="messaging_form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-5 controls">
+                                    #msg#
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Select User:</div>
+                                <div class="col-sm-7">
+                                    <select id="user_list" name="user_list[]" class="form-control m-bot15 show-tick" data-actions-box="true" multiple>#user_list#<option value="1">pranav</option><option value="2">pranav</option><option value="3">pranav</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Message Subject:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" name="message_subject" id="message_subject" class="form-control" maxlength="100" value="#message_subject#" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Message:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="message_text" rows="6" id="message_text">#message_text#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">File</label>
+                                <div class="col-sm-7">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <span class="btn btn-white btn-file">
+                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select file</span>
+                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                            <input type="file" class="default" name="file" id="file" />
+                                        </span>
+                                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Send" class="btn btn-info" name="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<script>
+    var Script = function () {
+        $(document).ready(function () {
+            $('#user_list').selectpicker({
+                liveSearch: true
+            });
+
+            $("#messaging_form").validate({
+                rules: {
+//                    message_subject: {required: true, minlength: 3, maxlength: 30},
+//                    'user_list[]': {required: true}
+                },
+                messages: {
+//                    message_subject: "Please enter message subject",
+//                    'user_list[]': {required: "Please enter message subject"}
+                }
+            });
+        });
+    }();
+</script>
+
+#footer#

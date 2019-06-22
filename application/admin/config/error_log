@@ -1,0 +1,104 @@
+[30-Dec-2015 13:01:58 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:02:24 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:02:52 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:03:16 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:03:45 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:04:13 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:04:37 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:05:00 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:05:29 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:05:57 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:06:22 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2015 13:17:19 America/Denver] PHP Notice:  Undefined index: id in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 372
+[30-Dec-2015 13:20:51 America/Denver] PHP Notice:  Undefined index: id in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 372
+[30-Dec-2015 13:21:59 America/Denver] PHP Notice:  Undefined index: id in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 372
+[30-Dec-2015 13:23:22 America/Denver] PHP Notice:  Undefined index: publication_id in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 372
+[30-Dec-2015 13:24:03 America/Denver] PHP Notice:  Undefined index: publication_id in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 372
+[30-Dec-2015 13:25:57 America/Denver] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 366
+[30-Dec-2015 13:26:26 America/Denver] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home3/mumbaiar/public_html/admin/config/publicationUpload.php on line 366
+[13-Feb-2016 04:36:52 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[13-Feb-2016 04:37:11 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[13-Feb-2016 04:37:11 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:37:31 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[13-Feb-2016 04:37:31 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:37:52 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[13-Feb-2016 04:37:52 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:37:55 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:37:57 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:37:57 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:40:40 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:40:40 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:42:41 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:42:41 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:44:00 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[13-Feb-2016 04:44:01 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[17-Feb-2016 09:22:34 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[24-Jul-2016 03:25:48 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[24-Jul-2016 03:25:58 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[24-Jul-2016 13:30:29 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[24-Jul-2016 13:30:29 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[24-Jul-2016 13:31:49 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[24-Jul-2016 13:31:49 America/Denver] PHP Warning:  end() expects parameter 1 to be array, string given in /home3/mumbaiar/public_html/admin/config/bigUpload.php on line 42
+[16-Aug-2016 22:47:32 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[16-Aug-2016 22:47:35 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[16-Aug-2016 22:47:37 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[16-Aug-2016 22:47:39 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[16-Aug-2016 22:47:41 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Aug-2016 07:15:23 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Aug-2016 07:15:32 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:18 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:25 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:28 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:31 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:33 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:36 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:57 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:01:59 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:02:01 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:21 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:24 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:27 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:36 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:38 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:40 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:44 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:48 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:51 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:54 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:56 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:09:58 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:01 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:03 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:05 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:07 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:09 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:11 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:14 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:16 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:18 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:21 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 19:10:24 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:21 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:24 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:26 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:28 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:31 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:37 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:40 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:43 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:47 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:49 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:51 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:54 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:57 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:08:59 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:01 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:03 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:06 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:08 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:10 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:12 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:14 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:16 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[22-Aug-2016 20:09:19 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Dec-2016 04:58:36 America/Denver] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0

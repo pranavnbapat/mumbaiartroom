@@ -1,0 +1,55 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">All Links</li>
+                </ul>
+            </div>
+        </div>
+        <section class="panel">
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="projects_list">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Type</th>
+                                <th>Home Page</th>
+				<th>Link</th>
+                                <th>Date Created</th>
+                                <th>Date Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #projects_list#
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        $('#projects_list').dataTable({
+            "aaSorting": [[5, "desc"]]
+        });
+    });
+</script>
+#footer#

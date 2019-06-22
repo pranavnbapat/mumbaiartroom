@@ -1,0 +1,127 @@
+#header#
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Edit programme</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Programme
+                    </header>
+                    <div class="panel-body">
+                        <form action="programme-edit.php" method="post" name="programme_form" class="form-horizontal tasi-form" id="programme_form">
+                            #msg#
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Year:</div>
+                                <div class="col-sm-7">
+                                    <select id="programme_year" name="programme_year" class="form-control">
+                                        #programme_year#
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_title" name="programme_title" value="#programme_title#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Sub-Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_subtitle" name="programme_subtitle" value="#programme_subtitle#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Date:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_date" name="programme_date" value="#programme_date#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Programme Order:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="programme_order" name="programme_order" value="#programme_order#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Link:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="link" name="link">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Update" class="btn btn-info" name="submit" />
+                                    <input type="button" value="Cancel" class="btn btn-info" name="cancel" id="cancel" />
+                                </div>
+                            </div>
+                            <input type="hidden" value="#programme_id#" name="programme_id" id="programme_id" />
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+
+<link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+<style type="text/css">
+    label.error {
+        color: #b94a48;
+        font-weight: normal;
+        font-size: 12px;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    $("#cancel").click(function () {
+        top.location.href = 'programme.php?msg=canceled';
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: 'get-project-publication-content.php?type=programme&link=#link#&id=#programme_id#'
+        }).success(function (resp) {
+            $("#link").html(resp);
+        });
+
+        $("#programme_form").validate({
+            rules: {
+                programme_title: {required: true, minlength: 2, maxlength: 200},
+                programme_subtitle: {required: true, minlength: 2, maxlength: 100},
+                programme_order: {required: true, digits: true, minlength: 1, maxlength: 2},
+//                programme_date: {required: true, maxlength: 20},
+                programme_year: {select_year: true}
+            },
+            messages: {
+                programme_title: {required: 'Please enter programme title'},
+                programme_subtitle: {required: 'Please enter programme subtitle'},
+                programme_order: {required: 'Please enter programme order'},
+//                programme_date: {required: 'Please enter programme date'}
+            }
+        });
+        jQuery.validator.addMethod('select_year', function (value) {
+            return (value != '0');
+        }, "Please select programme year");
+    });
+</script>
+#footer#

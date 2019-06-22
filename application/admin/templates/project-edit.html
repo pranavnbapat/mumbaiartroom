@@ -1,0 +1,531 @@
+#header#
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Add Projects/Exhibitions/Events</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Projects / Exhibitions / Events
+                    </header>
+                    <div class="panel-body">
+                        <form action="project-edit.php" method="post" name="project_form" class="form-horizontal tasi-form" id="project_form" enctype="multipart/form-data">
+                            #msg#
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Title:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="project_title" name="project_title" value="#project_title#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Date:</div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="project_date" name="project_date" value="#project_date#" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Content 1:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="project_content_1" id="project_content_1" rows="6">#project_content_1#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Content 2:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="project_content_2" id="project_content_2" rows="6">#project_content_2#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Content 3:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="project_content_3" id="project_content_3" rows="6">#project_content_3#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 1:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_1#">
+                                        <input type="hidden" value="#image_1#" name="image_1" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_1#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_1" name="image_1" />
+                                            </span>
+                                            <a onclick="remove_image('#image_1#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_1" name="image_link_1" value="#image_link_1#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <br />
+                                    <input id="image_caption_1" name="image_caption_1" class="form-control" value="#image_caption_1#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 2:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_2#">
+                                        <input type="hidden" value="#image_2#" name="image_2" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_2#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_2" name="image_2" />
+                                            </span>
+                                            <a onclick="remove_image('#image_2#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_2" name="image_link_2" value="#image_link_2#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_2" name="image_caption_2" class="form-control" value="#image_caption_2#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 3:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_3#">
+                                        <input type="hidden" value="#image_3#" name="image_3" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_3#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_3" name="image_3" />
+                                            </span>
+                                            <a onclick="remove_image('#image_3#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_3" name="image_link_3" value="#image_link_3#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_3" name="image_caption_3" class="form-control" value="#image_caption_3#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 4:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_4#">
+                                        <input type="hidden" value="#image_4#" name="image_4" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_4#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_4" name="image_4" />
+                                            </span>
+                                            <a onclick="remove_image('#image_4#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_4" name="image_link_4" value="#image_link_4#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_4" name="image_caption_4" class="form-control" value="#image_caption_4#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 5:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_5#">
+                                        <input type="hidden" value="#image_5#" name="image_5" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_5#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_5" name="image_5" />
+                                            </span>
+                                            <a onclick="remove_image('#image_5#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_5" name="image_link_5" value="#image_link_5#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_5" name="image_caption_5" class="form-control" value="#image_caption_5#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Image layout:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="image_layout" name="image_layout">
+                                        #image_layouts#
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 6:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_6#">
+                                        <input type="hidden" value="#image_6#" name="image_6" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_6#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_6" name="image_6" />
+                                            </span>
+                                            <a onclick="remove_image('#image_6#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_6" name="image_link_6" value="#image_link_6#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <br />
+                                    <input id="image_caption_6" name="image_caption_6" class="form-control" value="#image_caption_6#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 7:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_7#">
+                                        <input type="hidden" value="#image_7#" name="image_7" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_7#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_7" name="image_7" />
+                                            </span>
+                                            <a onclick="remove_image('#image_7#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_7" name="image_link_7" value="#image_link_7#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_7" name="image_caption_7" class="form-control" value="#image_caption_7#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 8:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_8#">
+                                        <input type="hidden" value="#image_8#" name="image_8" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_8#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_8" name="image_8" />
+                                            </span>
+                                            <a onclick="remove_image('#image_8#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_8" name="image_link_8" value="#image_link_8#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_8" name="image_caption_8" class="form-control" value="#image_caption_8#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 9:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_9#">
+                                        <input type="hidden" value="#image_9#" name="image_9" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_9#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_9" name="image_9" />
+                                            </span>
+                                            <a onclick="remove_image('#image_9#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_9" name="image_link_9" value="#image_link_9#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_9" name="image_caption_9" class="form-control" value="#image_caption_9#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Media 10:</div>
+                                <div class="col-sm-3">
+                                    <div class="fileupload fileupload-exists" data-provides='fileupload' data-name="#image_10#">
+                                        <input type="hidden" value="#image_10#" name="image_10" />
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="img/no_image.jpeg" alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="img/projects/#image_10#" /></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new">
+                                                    <i class="fa fa-paper-clip"> Select image</i>
+                                                </span>
+                                                <span class="fileupload-exists">
+                                                    <i class="fa fa-undo"> Change</i>
+                                                </span>
+                                                <input class="default" type="file" id="image_10" name="image_10" />
+                                            </span>
+                                            <a onclick="remove_image('#image_10#')" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="image_link_10" name="image_link_10" value="#image_link_10#" class="form-control" placeholder="(Optional) Enter YouTube link here for a video" />
+                                    <input id="image_caption_10" name="image_caption_10" class="form-control" value="#image_caption_10#" placeholder="(Optional) Enter image caption here" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Image layout 2:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="image_layout_2" name="image_layout_2">
+                                        #image_layouts_2#
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Type:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="type" name="type">
+                                        #type#
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Is Home Page?:</div>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="is_home" name="is_home">
+                                        #is_home#
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label">Link:</div>
+                                <div class="col-sm-7">
+                                    <textarea class="form-control ckeditor" name="project_links" id="project_links" rows="6">#project_links#</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5 control-label">&nbsp;</div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Update" class="btn btn-info" name="submit" />
+                                    <input type="button" value="Cancel" class="btn btn-info" name="cancel" id="cancel" />
+                                </div>
+                            </div>
+                            <input type="hidden" name="project_id" id="project_id" value="#project_id#" />
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+                                                $('#media_1').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_2').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_3').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_4').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_5').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_6').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_7').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_8').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_9').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                $('#media_10').change(function () {
+                                                    var val = $(this).val().toLowerCase();
+                                                    var regex = new RegExp("(.*?)\.(jpg|jpeg|png)$");
+                                                    if (!(regex.test(val))) {
+                                                        $(this).val('');
+                                                        sweetAlert('Error', 'Only JPG, JPEG, and PNG files are accepted.', 'error');
+                                                    }
+                                                });
+                                                function remove_image(image_name) {
+                                                    swal({
+                                                        title: "Are you sure?",
+                                                        text: "Deleting this image will remove it completely from the system and you will not be able to recover it",
+                                                        type: "warning",
+                                                        showCancelButton: true,
+                                                        confirmButtonColor: "#DD6B55",
+                                                        confirmButtonText: "Yes, delete it!",
+                                                        cancelButtonText: "No, cancel it!",
+                                                        closeOnConfirm: false,
+                                                        closeOnCancel: false
+                                                    },
+                                                    function (isConfirm) {
+                                                        if (isConfirm) {
+                                                            $.ajax({
+                                                                type: 'POST',
+                                                                url: 'delete_images.php',
+                                                                data: {image: image_name, project_id:#project_id#}
+                                                            }).success(function (resp) {
+                                                                if (resp == 'success') {
+                                                                    swal({
+                                                                        title: "Image has been deleted!",
+                                                                        text: "",
+                                                                        type: "success",
+                                                                        confirmButtonColor: "#78cd51",
+                                                                        confirmButtonText: "OK!",
+                                                                        closeOnConfirm: false
+                                                                    },
+                                                                    function () {
+                                                                        top.location.href = 'project-edit.php?project_id=#project_id#';
+                                                                    });
+                                                                } else {
+                                                                    swal("Error", "Something has gone wrong! Please contact your administrator.", "error");
+                                                                }
+                                                            });
+                                                        } else {
+                                                            swal("Cancelled", "Image is safe :)", "info");
+                                                        }
+                                                    });
+                                                }
+
+                                                $("#cancel").click(function () {
+                                                    top.location.href = 'projects.php?msg=canceled';
+                                                });
+                                                $(document).ready(function () {
+                                                    $("#project_form").validate({
+                                                        rules: {
+                                                            project_title: {required: true, minlength: 2, maxlength: 100},
+//                project_date: {project_date: true, maxlength: 50},
+                                                            project_content_1: {required: true},
+                                                            type: {select_type: true},
+                                                            image_layout: {select_image_layout: true}
+                                                        },
+                                                        messages: {
+                                                            project_title: {required: 'Please enter project title'},
+                                                            project_content_1: {required: 'Please enter project content'}
+                                                        }
+                                                    });
+                                                    jQuery.validator.addMethod('project_date', function (value) {
+                                                        return /^[a-zA-Z0-9 -]+$/.test(value);
+                                                    }, 'Only alphanumeric and "-" are allowed from project date.');
+                                                    jQuery.validator.addMethod('select_type', function (value) {
+                                                        return (value != '0');
+                                                    }, "Please select type");
+                                                    jQuery.validator.addMethod('select_image_layout', function (value) {
+                                                        return (value != '0');
+                                                    }, "Please select project ");
+                                                });
+</script>
+#footer#

@@ -1,0 +1,101 @@
+#header#
+<div class="mainArea">
+    <div class="subscribe">
+        <form id="subscribe" name="subscribe" method="POST" action="">
+            <div class="formRow">
+                <div class="field"><input type="text" name="fname" id="fname" maxlength="50" placeholder="First Name" /></div>
+            </div>
+            <div class="formRow">
+                <div class="field"><input type="text" name="lname" id="lname" maxlength="50" placeholder="Last Name" /></div>
+            </div>
+            <div class="formRow">
+                <div class="field"><input type="text" name="email" id="email" placeholder="Email" /></div>
+            </div>
+            <div class="formRow">
+                <div class="field"><input type="text" name="city" id="city" maxlength="50" placeholder="City" /></div>
+            </div>
+            <div class="formRow">
+                <div class="field"><input type="submit" name="submit" id="submit" value="Submit" /></div>
+            </div>
+        </form>
+        <div id="form_success">Thank you for subscribing, you will receive our next newsletter soon.</div>
+        <div id="form_error">There was some error processing your request. Please try after sometime.</div>
+        <div id="form_duplicate">Sorry, this email address has already been entered!</div>
+    </div>
+</div>
+<style>
+    .error {font-size:12px; float:left; color: #fd3a5a; margin-left:10px;}
+    #form_success, #form_error, #form_duplicate {font-size: 13px;}
+
+    #form_success, #form_error, #form_duplicate {
+        display: none;
+        margin-left: 153px;
+    }
+
+    .formRow {
+        margin: 0 0 10px !important;
+    }
+
+    input[type="text"] {
+        height: 25px !important;
+        width:72%;
+        background-color: #FFF !important;
+    }
+    
+    input {
+        outline: none;
+    }
+</style>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#form_success").hide();
+        $("#form_error").hide();
+        $("#form_duplicate").hide();
+
+        $("#subscribe").validate({
+            rules: {
+                fname: {required: true, name_check: true, minlength: 2, maxlength: 50},
+                lname: {required: true, name_check: true, minlength: 2, maxlength: 50},
+                email: {required: true, email: true, maxlength: 100},
+                city: {minlength: 2, maxlength: 50}
+            },
+            messages: {
+                fname: {required: 'Please enter your first name'},
+                lname: {required: 'Please enter your last name'},
+                email: {required: 'Please enter your email address'}
+            },
+            submitHandler: function () {
+                $.ajax({
+                    type: 'POST',
+                    url: 'subscribe_insert.php',
+                    data: $("#subscribe").serialize()
+                }).success(function (resp) {
+                    if (resp.trim() == 'success') {
+                        $("#name").val('');
+                        $("#email").val('');
+                        $("#phone").val('');
+                        $("#state").val('');
+                        $("#city").val('');
+                        $("#form_error").fadeOut();
+                        $("#form_duplicate").fadeOut();
+                        $("#form_success").fadeIn();
+                    } else if(resp.trim() == 'duplicate') {
+                        $("#form_error").fadeOut();
+                        $("#form_success").fadeOut();
+                        $("#form_duplicate").fadeIn();
+                    } else {
+                        $("#form_duplicate").fadeOut();
+                        $("#form_success").fadeOut();
+                        $("#form_error").fadeIn();
+                    }
+                });
+            }
+        });
+
+        jQuery.validator.addMethod('name_check', function (value) {
+            return /^[a-zA-Z ]+$/.test(value);
+        }, 'Only alphabets and spaces are allowed.');
+    });
+</script>
+#footer#
